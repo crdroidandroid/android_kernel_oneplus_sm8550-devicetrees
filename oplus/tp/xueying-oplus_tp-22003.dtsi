@@ -564,6 +564,7 @@
 		prevention,dynamic_finger_hold_exit_distance = <1 350 2300 450>;
 
 		black_gesture_support;
+		fw_edge_limit_support;
 		pressure_report_support;
 		charger_pump_support;
 		game_switch_support;

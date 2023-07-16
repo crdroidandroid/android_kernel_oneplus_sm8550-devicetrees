@@ -59,8 +59,9 @@
 		reg = <0x4 SPMI_USID>;
 		#address-cells = <1>;
 		#size-cells = <0>;
-		status = "disabled";
-
+//#ifdef OPLUS_FEATURE_CAMERA_COMMON
+		//status = "disabled";
+//#endif
 		pm8550vs_e_tz: pm8550vs-e-temp-alarm@a00 {
 			compatible = "qcom,spmi-temp-alarm";
 			reg = <0xa00>;
@@ -83,8 +84,9 @@
 		reg = <0x6 SPMI_USID>;
 		#address-cells = <1>;
 		#size-cells = <0>;
-		status = "disabled";
-
+//#ifdef OPLUS_FEATURE_ESIM
+		//status = "disabled";
+//#endif
 		pm8550vs_g_tz: pm8550vs-g-temp-alarm@a00 {
 			compatible = "qcom,spmi-temp-alarm";
 			reg = <0xa00>;
@@ -164,7 +166,9 @@
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pm8550vs_e_tz>;
-		status = "disabled";
+//#ifdef OPLUS_FEATURE_CAMERA_COMMON
+		//status = "disabled";
+//#endif
 
 		trips {
 			pm8550vs_e_trip0: trip0 {

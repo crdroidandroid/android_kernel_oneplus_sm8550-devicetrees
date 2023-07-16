@@ -12,7 +12,7 @@
 	interrupt-controller;
 	#interrupt-cells = <4>;
 
-	qcom,pmk8550@0 {
+	pmk8550: qcom,pmk8550@0 {
 		compatible = "qcom,spmi-pmic";
 		reg = <0x0 SPMI_USID>;
 		#address-cells = <1>;
@@ -32,7 +32,7 @@
 			resin {
 				compatible = "qcom,pmk8350-resin";
 				interrupts = <0x0 0x13 0x6 IRQ_TYPE_EDGE_BOTH>;
-				linux,code = <KEY_VOLUMEDOWN>;
+				linux,code = <KEY_VOLUMEUP>;
 			};
 		};
 
@@ -139,6 +139,16 @@
 				qcom,pre-scaling = <1 1>;
 				qcom,adc-tm-type = <1>;
 			};
+			//#ifdef OPLUS_FEATURE_THERMAL
+                        pm8550_exp2_therm {
+                                reg = <PM8550_ADC5_GEN3_AMUX_THM6_GPIO2_100K_PU>;
+                                label = "pm8550_exp2_therm";
+                                qcom,ratiometric;
+                                qcom,hw-settle-time = <200>;
+                                qcom,pre-scaling = <1 1>;
+                                qcom,adc-tm-type = <1>;
+                        };
+			//#endif /* OPLUS_FEATURE_THERMAL */
 
 			/* PM8550 Channel nodes */
 			pm8550_offset_ref {

@@ -28,7 +28,7 @@
 
 
 	chosen: chosen {
-			bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 log_buf_len=256K kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=1 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket";
+			bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 log_buf_len=1M kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=0 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket";
 	};
 
 	reserved_memory: reserved-memory { };
@@ -642,7 +642,7 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0x1000000>;
+		size = <0x0 0x1400000>;
 	};
 
 	glink_contig_mem: glink_contig_region {
@@ -653,13 +653,16 @@
 		size = <0x0 0x1000000>;
 	};
 
+/* #ifdef OPLUS_BUG_STABILITY */
 	ramoops_mem: ramoops_region {
 		compatible = "ramoops";
 		alloc-ranges = <0x0 0x00000000 0xffffffff 0xffffffff>;
-		size = <0x0 0x200000>;
+		size = <0x0 0x240000>;
 		pmsg-size = <0x200000>;
+		console-size = <0x40000>;
 		mem-type = <2>;
 	};
+/* #endif OPLUS_BUG_STABILITY */
 
 	/* global autoconfigured region for contiguous allocations */
 	system_cma: linux,cma {
@@ -683,6 +686,26 @@
 	#size-cells = <1>;
 	ranges = <0 0 0 0xffffffff>;
 	compatible = "simple-bus";
+
+	  preisp: zeku,explorer@0 {
+		compatible = "zeku,explorer";
+		interrupt-parent = <&tlmm>;
+		bsp_irq_gpio = <&tlmm 171 0>;
+		bsp_int1_gpio = <&tlmm 172 0>;
+		bsp_int2_gpio = <&tlmm 137 0>;
+		explorer_sleep_gpio = <&tlmm 144 0>;
+		pmic_pon_gpio = <&tlmm 116 0>;
+		pmic_reset_gpio = <&tlmm 125 0>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&explorer_int0 &explorer_int1 &explorer_int2 &pmic_pon_1 &gpio_sleep &pmic_resin_n>;
+		clock-names = "clk_ref";
+		clocks = <&rpmhcc RPMH_LN_BB_CLK4>;
+		vcc_sdio-supply = <&L8B>;
+		explorer,clk-drive-strength = <4>;
+		explorer,cmd-drive-strength = <4>;
+		explorer,data-drive-strength = <4>;
+		explorer,spmi-drive-strength = <7>;
+	  };
 
 	dsi_pll_codes {
 	};
@@ -2141,7 +2164,7 @@
 		interrupt-names = "hc_irq", "pwr_irq";
 
 		bus-width = <4>;
-		no-sdio;
+		//no-sdio;
 		no-mmc;
 		qcom,restore-after-cx-collapse;
 		qcom,uses_level_shifter;
@@ -3623,9 +3646,7 @@
 
 	qcom,qbt_handler {
 		compatible = "qcom,qbt-handler";
-		qcom,ipc-gpio = <&tlmm 40 0>;
 		qcom,finger-detect-gpio = <&tlmm 41 0>;
-		qcom,intr2-gpio = <&tlmm 42 0>;
 	};
 
 	spmi_bus: spmi0_bus: qcom,spmi@c42d000 {

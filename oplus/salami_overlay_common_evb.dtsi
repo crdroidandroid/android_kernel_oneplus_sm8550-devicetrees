@@ -246,7 +246,7 @@
 };
 //#endif /*OPLUS_FEATURE_TP_BASIC*/
 
-//#ifdef OPLUS_FEATURE_DISPLAY
+/* #if defined(CONFIG_PXLW_IRIS) */
 &pmk8550_gpios {
 	/delete-property/ pinctrl-0;
 	pinctrl-0 = <&alt_sleep_clk_default &pxlw_clk_default>;
@@ -263,4 +263,4 @@
 		};
 	};
 };
-//#endif /* OPLUS_FEATURE_DISPLAY */
+/* #endif */

@@ -19,11 +19,12 @@
 	};
 	ssc_interactive: ssc_interactive{
 		sup-power-fb;
+		sup-hbm-mode = <1>;
 		need_lb_algo = <1>;
 
 		primary_lb_brl_info {
 			brl_thrd_num = <2>;
-			brl_thrd = <500 850>;
+			brl_thrd = <600 850>;
 			brl_l2h_thrd = <850>;
 		};
 	};

@@ -31,35 +31,6 @@
     };
   };
   //#endif /* OPLUS_FEATURE_RF_CABLE_DETECT */
-
-  //#ifdef OPLUS_FEATURE_BT_SMART_ANTENNA
-  oplus_bsa_pins {
-    bt_bsa_high: bt_bsa_high {
-      mux {
-        pins = "gpio98";
-        function = "gpio";
-      };
-      config {
-        pins = "gpio98";
-        drive-strength = <2>;
-        output-high;
-        bias-pull-up;
-      };
-    };
-    bt_bsa_low: bt_bsa_low {
-      mux {
-        pins = "gpio98";
-        function = "gpio";
-      };
-      config {
-        pins = "gpio98";
-        drive-strength = <2>;
-        output-low;
-        bias-pull-down;
-      };
-    };
-  };
-  //#endif
 };
 
 &soc {
@@ -74,15 +45,4 @@
     pinctrl-0 = <&rf_cable0_active>;
   };
   //#endif /* OPLUS_FEATURE_RF_CABLE_DETECT */
-
-  //#ifdef OPLUS_FEATURE_BT_SMART_ANTENNA
-  oplus_bsa {
-    compatible = "oplus-bt-bsa";
-    bt-bsa-gpio = <&tlmm 98 0>;
-    pinctrl-names = "bt_bsa_high", "bt_bsa_low";
-    pinctrl-0 = <&bt_bsa_high>;
-    pinctrl-1 = <&bt_bsa_low>;
-    vdd-supply = <&L15B>;
-  };
-  //#endif
 };

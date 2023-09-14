@@ -208,8 +208,8 @@
 		compatible = "synaptics-s3910";
 		reg = <0x0>;
 		chip-name = "S3910";
-		status = "disabled";
-		spi-max-frequency = <6000000>;
+		status = "ok";
+		spi-max-frequency = <15000000>;
 
 		/* Interrupt && Irq-gpio */
 		interrupt-parent = <&tlmm>;
@@ -231,32 +231,45 @@
 		touchpanel,max-num-support = <10>;
 		touchpanel,tx-rx-num = <17 38>;
 		earsense,tx-rx-num = <17 18>;
-		touchpanel,panel-coords = <14400 32160>;
-		touchpanel,display-coords = <1440 3216>;
+		touchpanel,panel-coords = <14400 31680>;
+		touchpanel,display-coords = <1440 3168>;
 		touchpanel,touchmajor-limit = <256 256>;
 		touchpanel,int-mode = <1>; /*0: interrupt and disable, 1:interrupt and not disable*/
 		touchpanel,curved-size = <45>;
 
 		prevention,curved_screen_V2;
 		prevention,grip_disable_level = <6>;
-		prevention,updelay_time_ms = <45>;
-		prevention,makeup_cnt_weight = <5 1 2 2 2>;
-		prevention,large_corner_range = <960 2400>;
-		prevention,large_corner_judge_condition = <850 100 800 7 7>;
+		prevention,updelay_time_ms = <30>;
+		prevention,makeup_cnt_weight = <4 1 2 2 2>;
+		prevention,large_corner_range = <1800 4000>;
+		prevention,large_corner_judge_condition = <500 300 1300 6 6>;
 		prevention,trx_reject_condition = <8 7 7>;
 		prevention,trx_strict_reject_condition = <8 6 6>;
 		prevention,large_judge_time_ms = <500 50 30>;
 		prevention,large_exit_condition = <8 8 2>;
-		prevention,single_channel_width = <160 160>;
-		prevention,normal_tap_condition = <10 350>;
-		prevention,long_edge_condition = <240 150 180 80>;
+		prevention,single_channel_width = <420 420>;
+		prevention,normal_tap_condition = <10 300>;
+		prevention,long_edge_condition = <210 90 180 80>;
 		prevention,long_strict_edge_condition = <160 60>;
-		prevention,long_fingerhold_condition = <100 6 4 4>;
+		prevention,long_fingerhold_condition = <50 6 4 4>;
 		prevention,short_edge_condition = <200 90 180 80>;
 		prevention,short_strict_edge_condition = <160 60>;
-		prevention,large_strict_exit_condition = <6 6>;
-		prevention,top_corner_config = <250 750 100>;
-		prevention,edge_swipe_config = <150 500>;
+		prevention,large_strict_exit_condition = <4 4>;
+		prevention,top_corner_config = <150 500 480>;
+		prevention,edge_swipe_config = <400 1500>;
+
+		prevention,curved_screen_V4;
+		prevention,long_eliminate_point_type = <2 14400 10560 300 31680 300 1>;
+		prevention,long_fingerhold_condition2 = <650 2000 0 0>;
+		prevention,top_corner_config2 =<3 80 600 1500 0>;
+		prevention,hor_long_top_corner_config =<350 2270 0 0>;
+		prevention,top_middle_config =<14400 1000 1000 0>;
+		prevention,corner_eliminate_point_type =<0 1380 2280 1>;
+		prevention,finger_hold_differ_size = <1 0 400 300>;
+		prevention,finger_hold_max_rx_exit_distance = <5 350 2300>;
+		prevention,max_rx_exit_distance = <1 5 150 350 2000>;
+		prevention,dynamic_finger_hold_exit_distance = <1 350 2300 450>;
+		prevention,edge_sliding_matched_support = <1 250 3 0>;
 
 		touchpanel,smooth-level = <0 1 2 4 7 9>;
 		touchpanel,smooth-level-charging = <0 2 4 7 8 9>;
@@ -265,8 +278,7 @@
 		touchpanel,high-frame-rate-time = <60>;
 
 		end_stretch_value = <480 250 16 16>;
-
-		touchpanel,tp_ic_type = <2>;
+		//touchpanel,tp_ic_type = <2>;
 		panel_type = <8 8 8>;
 		// type of tp_dev ,TP-SAMSUNG = 8;
 		firmware_name = "AA367", "AA367";
@@ -299,6 +311,7 @@
 		spi_port_support;
 		exception_upload_support;
 		sportify_aod_gesture_support;
+		glove_mode_support;
 
 		/*
 		 *Virtual Key Config:
@@ -319,8 +332,8 @@
 		S3910 {
 			switch_report_rate;
 			report_rate_default = <60>;
-			report_rate_game_value = <1>;
-			fps_report_rate = <60 2 90 1 120 3>;//1:360Hz 2:125Hz 3:240Hz
+			report_rate_game_value = <3>;
+			fps_report_rate = <60 2 90 3 120 3>;//1:360Hz 2:125Hz 3:240Hz
 			default_gesture_mask = <8191>;
 			fwupdate_bootloader = <1>;
 			normal_config_version = <2>;
@@ -331,8 +344,9 @@
 		compatible = "synaptics,tcm-spi-hbp";
 		reg = <0x0>;
 		chip-name = "S3910";
-		status = "okay";
+		status = "disabled";
 		spi-max-frequency = <15000000>;
+		qcom,rt;
 
 		/* Interrupt && Irq-gpio */
 		interrupt-parent = <&tlmm>;
@@ -363,8 +377,8 @@
 		synaptics,power-delay-ms = <200>;
 		synaptics,irq-on-state = <0>;
 		synaptics,reset-on-state = <0>;
-		synaptics,reset-active-ms = <20>;
-		synaptics,reset-delay-ms = <200>;
+		synaptics,reset-active-ms = <10>;
+		synaptics,reset-delay-ms = <80>;
 		synaptics,spi-mode = <0>;
 		synaptics,spi-byte-delay-us = <0>;
 		synaptics,spi-block-delay-us = <0>;

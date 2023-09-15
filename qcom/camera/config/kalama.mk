@@ -10,7 +10,7 @@ dtbo-$(CONFIG_ARCH_KALAMA) += kalama-camera-sensor-cdp.dtbo \
 endif
 
 #OPLUS_DTS_OVERLAY start
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/wukong-camera-overlay.dtbo
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/salami-camera-overlay.dtbo
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/xueying-camera-overlay.dtbo
+dtbo-$(CONFIG_WUKONG_DTB) += oplus/wukong-camera-overlay.dtbo
+dtbo-$(CONFIG_SALAMI_DTB) += oplus/salami-camera-overlay.dtbo
+dtbo-$(CONFIG_XUEYING_DTB) += oplus/xueying-camera-overlay.dtbo
 #OPLUS_DTS_OVERLAY end

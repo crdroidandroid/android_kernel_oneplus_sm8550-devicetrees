@@ -19,10 +19,10 @@ dtbo-y += \
                  kalama-sg-audio-hhg.dtbo
 endif
 #OPLUS_DTS_OVERLAY start
-dtbo-y += oplus/salami-22811-audio-kalama-overlay.dtbo
-dtbo-y += oplus/xueying-22003-audio-kalama-overlay.dtbo
-dtbo-y += oplus/xigua-22851-audio-kalama-overlay.dtbo
-dtbo-y += oplus/aston-23801-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_SALAMI_DTB) += oplus/salami-22811-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_XUEYING_DTB) += oplus/xueying-22003-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_XIGUA_DTB) += oplus/xigua-22851-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_ASTON_DTB) += oplus/aston-23801-audio-kalama-overlay.dtbo
 #OPLUS_DTS_OVERLAY end
 endif
 
@@ -53,7 +53,7 @@ dtbo-y += \
                  crow-audio-atp.dtbo
 endif
 #OPLUS_DTS_OVERLAY start
-dtbo-y += oplus/benz-23061-audio-crow-overlay.dtbo
+dtbo-$(CONFIG_BENZ_DTB) += oplus/benz-23061-audio-crow-overlay.dtbo
 #OPLUS_DTS_OVERLAY end
 endif
 

@@ -9,12 +9,12 @@ dtbo-$(CONFIG_ARCH_KALAMA) += kalama-camera-sensor-cdp.dtbo \
 endif
 
 #OPLUS_DTS_OVERLAY start
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/salami-camera-overlay.dtbo \
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/xueying-camera-overlay.dtbo \
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/xigua-camera-overlay.dtbo  \
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/aston-camera-overlay.dtbo  \
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/aston-camera-overlay-T0.dtbo  \
-dtbo-$(CONFIG_ARCH_KALAMA) += oplus/astondomastic-camera-overlay-T0.dtbo  \
+dtbo-$(CONFIG_SALAMI_DTB) += oplus/salami-camera-overlay.dtbo
+dtbo-$(CONFIG_XUEYING_DTB) += oplus/xueying-camera-overlay.dtbo
+dtbo-$(CONFIG_XIGUA_DTB) += oplus/xigua-camera-overlay.dtbo
+dtbo-$(CONFIG_ASTON_DTB) += oplus/aston-camera-overlay.dtbo
+dtbo-$(CONFIG_ASTON_DTB) += oplus/aston-camera-overlay-T0.dtbo
+dtbo-$(CONFIG_ASTON_DTB) += oplus/astondomastic-camera-overlay-T0.dtbo
 #OPLUS_DTS_OVERLAY end
 
 dtbo-$(CONFIG_ARCH_CROW) += crow-camera.dtbo
@@ -25,5 +25,5 @@ dtbo-$(CONFIG_ARCH_CROW) += \
 endif
 
 #OPLUS_DTS_OVERLAY start
-dtbo-$(CONFIG_ARCH_CROW) += oplus/benz-camera-overlay.dtbo
+dtbo-$(CONFIG_BENZ_DTB) += oplus/benz-camera-overlay.dtbo
 #OPLUS_DTS_OVERLAY end

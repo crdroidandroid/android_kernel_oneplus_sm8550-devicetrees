@@ -15,11 +15,11 @@ dtbo-$(CONFIG_ARCH_KALAMA) += \
 		display/kalama-sde-display-atp-overlay.dtbo
 endif
 #OPLUS_DTS_OVERLAY start
-dtbo-y += oplus/salami-22811-display-kalama-overlay.dtbo
-dtbo-y += oplus/xueying-22003-display-kalama-overlay.dtbo
-dtbo-y += oplus/xigua-22851-display-kalama-overlay.dtbo
-dtbo-y += oplus/aston-23801-display-kalama-overlay.dtbo
-dtbo-y += oplus/benz-23061-display-crow-overlay.dtbo
+dtbo-$(CONFIG_SALAMI_DTB) += oplus/salami-22811-display-kalama-overlay.dtbo
+dtbo-$(CONFIG_XUEYING_DTB) += oplus/xueying-22003-display-kalama-overlay.dtbo
+dtbo-$(CONFIG_XIGUA_DTB) += oplus/xigua-22851-display-kalama-overlay.dtbo
+dtbo-$(CONFIG_ASTON_DTB) += oplus/aston-23801-display-kalama-overlay.dtbo
+dtbo-$(CONFIG_BENZ_DTB) += oplus/benz-23061-display-crow-overlay.dtbo
 #OPLUS_DTS_OVERLAY end
 else
 dtbo-$(CONFIG_ARCH_KALAMA) += display/trustedvm-kalama-sde-display-mtp-overlay.dtbo \

@@ -1,18 +1,21 @@
 DTC_INCLUDE += $(srctree)/../sm8550-modules/qcom/opensource/audio-kernel/include
 
 ifeq ($(CONFIG_ARCH_KALAMA), y)
-dtbo-y += kalama-audio.dtbo \
-#                 kalama-audio-cdp.dtbo \
-#                 kalama-audio-cdp-nfc.dtbo \
-#                 kalama-audio-wsa883x-cdp.dtbo \
-#                 kalama-audio-mtp.dtbo \
-#                 kalama-audio-mtp-nfc.dtbo \
-#                 kalama-audio-qrd.dtbo \
-#                 kalama-audio-atp.dtbo \
-#                 kalama-audio-rcm.dtbo \
-#                 kalama-audio-rumi.dtbo \
-#                 kalama-audio-hdk.dtbo \
-#                 kalama-sg-audio-hhg.dtbo
+dtbo-y += kalama-audio.dtbo
+ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
+dtbo-y += \
+                 kalama-audio-cdp.dtbo \
+                 kalama-audio-cdp-nfc.dtbo \
+                 kalama-audio-wsa883x-cdp.dtbo \
+                 kalama-audio-mtp.dtbo \
+                 kalama-audio-mtp-nfc.dtbo \
+                 kalama-audio-qrd.dtbo \
+                 kalama-audio-atp.dtbo \
+                 kalama-audio-rcm.dtbo \
+                 kalama-audio-rumi.dtbo \
+                 kalama-audio-hdk.dtbo \
+                 kalama-sg-audio-hhg.dtbo
+endif
 #OPLUS_DTS_OVERLAY start
 dtbo-y += oplus/wukong-21131-audio-kalama-overlay.dtbo
 dtbo-y += oplus/salami-22811-audio-kalama-overlay.dtbo

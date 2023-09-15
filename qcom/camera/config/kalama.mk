@@ -1,10 +1,12 @@
 dtbo-$(CONFIG_ARCH_KALAMA) := kalama-camera.dtbo
-#dtbo-$(CONFIG_ARCH_KALAMA) += kalama-camera-sensor-cdp.dtbo \
-#								kalama-camera-sensor-mtp.dtbo \
-#								kalama-camera-sensor-qrd.dtbo \
-#								kalama-camera-sensor-hdk.dtbo \
-#								kalama-sg-hhg-camera.dtbo \
-#								kalama-sg-hhg-camera-sensor.dtbo
+ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
+dtbo-$(CONFIG_ARCH_KALAMA) += kalama-camera-sensor-cdp.dtbo \
+								kalama-camera-sensor-mtp.dtbo \
+								kalama-camera-sensor-qrd.dtbo \
+								kalama-camera-sensor-hdk.dtbo \
+								kalama-sg-hhg-camera.dtbo \
+								kalama-sg-hhg-camera-sensor.dtbo
+endif
 
 #OPLUS_DTS_OVERLAY start
 dtbo-$(CONFIG_ARCH_KALAMA) += oplus/salami-camera-overlay.dtbo \
@@ -16,8 +18,11 @@ dtbo-$(CONFIG_ARCH_KALAMA) += oplus/astondomastic-camera-overlay-T0.dtbo  \
 #OPLUS_DTS_OVERLAY end
 
 dtbo-$(CONFIG_ARCH_CROW) += crow-camera.dtbo
-# 				crow-camera-sensor-idp.dtbo \
-# 				crow-camera-sensor-qrd.dtbo
+ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
+dtbo-$(CONFIG_ARCH_CROW) += \
+				crow-camera-sensor-idp.dtbo \
+				crow-camera-sensor-qrd.dtbo
+endif
 
 #OPLUS_DTS_OVERLAY start
 dtbo-$(CONFIG_ARCH_CROW) += oplus/benz-camera-overlay.dtbo

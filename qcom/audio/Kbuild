@@ -1,20 +1,23 @@
 DTC_INCLUDE += $(srctree)/../sm8550-modules/qcom/opensource/audio-kernel/include
 
 ifeq ($(CONFIG_ARCH_KALAMA), y)
-dtbo-y += kalama-audio.dtbo \
-#                 kalama-audio-cdp.dtbo \
-#                 kalama-audio-cdp-nfc.dtbo \
-#                 kalama-audio-wsa883x-cdp.dtbo \
-#                 kalama-audio-cdp-apq.dtbo \
-#                 kalama-audio-mtp.dtbo \
-#                 kalama-audio-mtp-nfc.dtbo \
-#                 kalama-audio-mtp-apq.dtbo \
-#                 kalama-audio-qrd.dtbo \
-#                 kalama-audio-atp.dtbo \
-#                 kalama-audio-rcm.dtbo \
-#                 kalama-audio-rumi.dtbo \
-#                 kalama-audio-hdk.dtbo \
-#                 kalama-sg-audio-hhg.dtbo
+dtbo-y += kalama-audio.dtbo
+ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
+dtbo-y += \
+                 kalama-audio-cdp.dtbo \
+                 kalama-audio-cdp-nfc.dtbo \
+                 kalama-audio-wsa883x-cdp.dtbo \
+                 kalama-audio-cdp-apq.dtbo \
+                 kalama-audio-mtp.dtbo \
+                 kalama-audio-mtp-nfc.dtbo \
+                 kalama-audio-mtp-apq.dtbo \
+                 kalama-audio-qrd.dtbo \
+                 kalama-audio-atp.dtbo \
+                 kalama-audio-rcm.dtbo \
+                 kalama-audio-rumi.dtbo \
+                 kalama-audio-hdk.dtbo \
+                 kalama-sg-audio-hhg.dtbo
+endif
 #OPLUS_DTS_OVERLAY start
 dtbo-y += oplus/salami-22811-audio-kalama-overlay.dtbo
 dtbo-y += oplus/xueying-22003-audio-kalama-overlay.dtbo
@@ -39,13 +42,16 @@ dtbo-y += khaje-audio.dtbo \
 endif
 
 ifeq ($(CONFIG_ARCH_CROW), y)
-dtbo-y += crow-audio.dtbo \
-#                 crow-audio-idp.dtbo \
-#                 crow-audio-idp-wcd9395-aatc.dtbo \
-#                 crow-audio-idp-wcd9395-dmic.dtbo \
-#                 crow-audio-idp-wcd9395-wcd-dmic.dtbo \
-#                 crow-audio-qrd.dtbo \
-#                 crow-audio-atp.dtbo
+dtbo-y += crow-audio.dtbo
+ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
+dtbo-y += \
+                 crow-audio-idp.dtbo \
+                 crow-audio-idp-wcd9395-aatc.dtbo \
+                 crow-audio-idp-wcd9395-dmic.dtbo \
+                 crow-audio-idp-wcd9395-wcd-dmic.dtbo \
+                 crow-audio-qrd.dtbo \
+                 crow-audio-atp.dtbo
+endif
 #OPLUS_DTS_OVERLAY start
 dtbo-y += oplus/benz-23061-audio-crow-overlay.dtbo
 #OPLUS_DTS_OVERLAY end

@@ -3,6 +3,8 @@
 		compatible = "qcom,coresight-remote-etm";
 
 		coresight-name = "coresight-audio-etm0";
+		status = "disabled";
+
 		qcom,inst-id = <5>;
 		atid = <40>;
 
@@ -19,6 +21,8 @@
 	tpdm_lpass_lpi: tpdm_lpass_lpi {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-tpdm-lpass-lpi";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <26>;
@@ -36,6 +40,8 @@
 	lpass_stm: lpass_stm {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-lpass-stm";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <25>;
@@ -58,6 +64,7 @@
 
 		atid = <71>;
 		coresight-name = "coresight-tpdm-swao-prio-0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -80,6 +87,7 @@
 
 		atid = <71>;
 		coresight-name = "coresight-tpdm-swao-prio-1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -102,6 +110,7 @@
 
 		atid = <71>;
 		coresight-name = "coresight-tpdm-swao-prio-2";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -124,6 +133,7 @@
 
 		atid = <71>;
 		coresight-name = "coresight-tpdm-swao-prio-3";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -145,6 +155,7 @@
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-lpass";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -167,6 +178,7 @@
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-ddr-ch02";
+		status = "disabled";
 
 		atid = <78>;
 		clocks = <&aoss_qmp>;
@@ -190,6 +202,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-ddr-ch13";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -212,8 +225,8 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-ddr";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 
@@ -234,8 +247,8 @@
 		reg-names = "tpdm-base";
 
 		atid = <78>;
-		status = "disabled";
 		coresight-name = "coresight-tpdm-shrm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -258,6 +271,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-video";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -280,6 +294,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-mdss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -302,6 +317,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-mm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -324,6 +340,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-rdpm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -346,6 +363,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-rdpm-mx";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -367,6 +385,7 @@
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-turing";
+		status = "disabled";
 
 		atid = <78>;
 		clocks = <&aoss_qmp>;
@@ -385,6 +404,8 @@
 	tpdm_turing_llm: tpdm_turing_llm {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-tpdm-turing-llm";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <78>;
@@ -406,6 +427,8 @@
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-gpu";
+		status = "disabled";
+
 		atid = <78>;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -427,6 +450,7 @@
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-prng";
+		status = "disabled";
 
 		atid = <78>;
 		clocks = <&aoss_qmp>;
@@ -450,6 +474,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-qm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -472,6 +497,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-gcc";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -494,8 +520,8 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-vsense";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 
@@ -540,6 +566,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-dlct";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -562,6 +589,7 @@
 
 		atid = <78>;
 		coresight-name = "coresight-tpdm-ipcc";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -584,6 +612,7 @@
 
 		atid = <71>;
 		coresight-name = "coresight-tpdm-swao-1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -601,6 +630,8 @@
 	snoc: snoc {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-snoc";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <125>;
@@ -622,6 +653,7 @@
 
 		atid = <65>;
 		coresight-name = "coresight-tpdm-spdm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -645,6 +677,7 @@
 
 		atid = <16>;
 		coresight-name = "coresight-stm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -667,6 +700,7 @@
 
 		atid = <65>;
 		coresight-name = "coresight-tpdm-dcc";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -710,6 +744,8 @@
 		compatible = "qcom,coresight-remote-etm";
 
 		coresight-name = "coresight-turing-etm0";
+		status = "disabled";
+
 		qcom,inst-id = <13>;
 
 		atid = <38 39>;
@@ -795,6 +831,7 @@
 
 		atid = <75>;
 		coresight-name = "coresight-tpdm-dl-south";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -817,6 +854,7 @@
 
 		atid = <97>;
 		coresight-name = "coresight-tpdm-dl-north";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -839,6 +877,7 @@
 
 		atid = <66>;
 		coresight-name = "coresight-tpdm-llm-silver";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -861,6 +900,7 @@
 
 		atid = <66>;
 		coresight-name = "coresight-tpdm-llm-gold";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -883,6 +923,7 @@
 
 		atid = <66>;
 		coresight-name = "coresight-tpdm-apss-llm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -905,6 +946,7 @@
 
 		atid = <66>;
 		coresight-name = "coresight-tpdm-actpm";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -927,6 +969,7 @@
 
 		atid = <66>;
 		coresight-name = "coresight-tpdm-apss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -949,6 +992,7 @@
 
 		atid = <67>;
 		coresight-name = "coresight-tpdm-modem-0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -969,9 +1013,9 @@
 		reg = <0x10801000 0x1000>;
 		reg-names = "tpdm-base";
 
-		status = "disabled";
 		atid = <67>;
 		coresight-name = "coresight-tpdm-modem-1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -990,6 +1034,8 @@
 		compatible = "qcom,coresight-remote-etm";
 
 		coresight-name = "coresight-modem-etm0";
+		status = "disabled";
+
 		qcom,inst-id = <2>;
 
 		atid = <36 37>;
@@ -1007,6 +1053,8 @@
 		compatible = "qcom,coresight-remote-etm";
 
 		coresight-name = "coresight-modem2-etm0";
+		status = "disabled";
+
 		qcom,inst-id = <11>;
 
 		atid = <39>;
@@ -1023,6 +1071,8 @@
 	modem_diag: modem_diag {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-modem-diag";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <50>;
@@ -1042,9 +1092,9 @@
 		reg = <0x10c20000 0x1000>;
 		reg-names = "tpdm-base";
 
-		status = "disabled";
 		atid = <97>;
 		coresight-name = "coresight-tpdm-sdcc-2";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1065,9 +1115,9 @@
 		reg = <0x10c21000 0x1000>;
 		reg-names = "tpdm-base";
 
-		status = "disabled";
 		atid = <75>;
 		coresight-name = "coresight-tpdm-sdcc-4";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1090,8 +1140,8 @@
 
 		atid = <85>;
 		coresight-name = "coresight-tpdm-tmess-prng";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 
@@ -1113,8 +1163,8 @@
 
 		atid = <85>;
 		coresight-name = "coresight-tpdm-tmess-0";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 
@@ -1136,6 +1186,7 @@
 
 		atid = <85>;
 		coresight-name = "coresight-tpdm-tmess-1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1154,6 +1205,8 @@
 	tpdm_lpicc: tpdm_lpicc {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-tpdm-lpicc";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <27>;
@@ -1176,6 +1229,7 @@
 
 		atid = <99>;
 		coresight-name = "coresight-tpdm-llcc-0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1198,6 +1252,7 @@
 
 		atid = <99>;
 		coresight-name = "coresight-tpdm-llcc-1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1220,6 +1275,7 @@
 
 		atid = <99>;
 		coresight-name = "coresight-tpdm-llcc-2";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1242,6 +1298,7 @@
 
 		atid = <99>;
 		coresight-name = "coresight-tpdm-llcc-3";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1271,6 +1328,7 @@
 							 <3 32>;
 
 		coresight-name = "coresight-tpda-ddr-llcc";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1325,6 +1383,7 @@
 	funnel_ddr_lpi: funnel@10b23000 {
 		compatible = "arm,coresight-static-funnel";
 		coresight-name = "coresight-funnel-ddr-lpi";
+		status = "disabled";
 
 		in-ports {
 			#address-cells = <1>;
@@ -1352,6 +1411,7 @@
 	funnel_lpass_lpi_1: funnel@10b50000 {
 		compatible = "arm,coresight-static-funnel";
 		coresight-name = "coresight-funnel-lpass_lpi_1";
+		status = "disabled";
 
 		in-ports {
 			#address-cells = <1>;
@@ -1389,6 +1449,7 @@
 	funnel_lpass_lpi_0: funnel@10b44000 {
 		compatible = "arm,coresight-static-funnel";
 		coresight-name = "coresight-funnel-lpass_lpi_0";
+		status = "disabled";
 
 		in-ports {
 			#address-cells = <1>;
@@ -1431,8 +1492,8 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-gfx";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 
@@ -1454,6 +1515,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-gfx_dl";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1509,6 +1571,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-video";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1542,6 +1605,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-multimedia";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1595,6 +1659,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-lpass";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1628,6 +1693,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-ddr_ch02";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1661,6 +1727,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-ddr_ch13";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1689,6 +1756,8 @@
 	gladiator: gladiator {
 		compatible = "qcom,coresight-dummy";
 		coresight-name = "coresight-gladiator";
+		status = "disabled";
+
 		qcom,dummy-source;
 
 		atid = <96>;
@@ -1711,6 +1780,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-ddr_dl1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1759,6 +1829,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-ddr_dl0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -1867,6 +1938,7 @@
 		reg-names = "funnel-base-dummy", "funnel-base-real";
 
 		coresight-name = "coresight-funnel-turing_dup";
+		status = "disabled";
 
 		qcom,duplicate-funnel;
 		clocks = <&aoss_qmp>;
@@ -1904,6 +1976,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-turing";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2013,6 +2086,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-dl_west";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2113,6 +2187,7 @@
 							 <2 32>;
 
 		coresight-name = "coresight-tpda-dl_south";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2168,6 +2243,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-dl_south";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2207,6 +2283,7 @@
 		qcom,tpda-atid = <85>;
 
 		coresight-name = "coresight-tpda-tmess";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2262,6 +2339,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-tmess";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2299,6 +2377,7 @@
 		qcom,cmb-elem-size = <1 32>;
 
 		coresight-name = "coresight-tpda-dl_north";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2346,6 +2425,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-dl_north";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2403,6 +2483,7 @@
 		qcom,cmb-elem-size = <0 64>;
 
 		coresight-name = "coresight-tpda-modem";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2451,6 +2532,7 @@
 		reg-names = "funnel-base-dummy", "funnel-base-real";
 
 		coresight-name = "coresight-funnel-modem_q6_dup";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2489,6 +2571,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-modem_q6";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2534,6 +2617,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-modem";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2595,6 +2679,7 @@
 							 <3 64>;
 
 		coresight-name = "coresight-tpda-apss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2666,6 +2751,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-apss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2737,6 +2823,7 @@
 							 <27 64>;
 
 		coresight-name = "coresight-tpda-dl_center";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2928,6 +3015,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-dl_center";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2989,6 +3077,7 @@
 
 		qcom,tpda-atid = <65>;
 		coresight-name = "coresight-tpda-qdss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3036,6 +3125,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-in0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3089,6 +3179,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-in1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3158,6 +3249,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-qdss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3203,6 +3295,7 @@
 		reg-names = "tpda-base";
 
 		coresight-name = "coresight-tpda-aoss";
+		status = "disabled";
 
 		qcom,tpda-atid = <71>;
 
@@ -3283,6 +3376,7 @@
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-aoss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3340,6 +3434,7 @@
 		compatible = "qcom,coresight-dummy";
 
 		coresight-name = "coresight-eud";
+		status = "disabled";
 
 		qcom,dummy-sink;
 		in-ports {
@@ -3359,6 +3454,7 @@
 		reg-names = "tmc-base";
 
 		coresight-name = "coresight-tmc-etf";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3389,6 +3485,7 @@
 		reg-names = "replicator-base";
 
 		coresight-name = "coresight-replicator_swao";
+		status = "disabled";
 
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
@@ -3431,6 +3528,7 @@
 		reg-names = "replicator-base";
 
 		coresight-name = "coresight-replicator_qdss";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3464,6 +3562,7 @@
 		reg-names = "replicator-base";
 
 		coresight-name = "coresight-replicator_etr";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3515,6 +3614,7 @@
 		qcom,sw-usb;
 		dma-coherent;
 		coresight-name = "coresight-tmc-etr";
+		status = "disabled";
 
 		coresight-csr = <&csr>;
 		csr-atid-offset = <0xf8>;
@@ -3546,6 +3646,7 @@
 		reg-names = "tmc-base";
 
 		coresight-name = "coresight-tmc-etr1";
+		status = "disabled";
 
 		iommus = <&apps_smmu 0x0500 0>;
 		qcom,iommu-dma-addr-pool = <0x0 0xffc00000>;
@@ -3581,6 +3682,8 @@
 		reg-names = "csr-base";
 
 		coresight-name = "coresight-csr";
+		status = "disabled";
+
 		qcom,usb-bam-support;
 		qcom,hwctrl-set-support;
 		qcom,set-byte-cntr-support;
@@ -3595,6 +3698,8 @@
 		reg-names = "csr-base", "msr-base";
 
 		coresight-name = "coresight-swao-csr";
+		status = "disabled";
+
 		qcom,timestamp-support;
 		qcom,msr-support;
 
@@ -3610,6 +3715,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-qc_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3626,6 +3732,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cti0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3638,6 +3745,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-dlmm_cti0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3650,6 +3758,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-ddr_dl_0_cti_0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3662,6 +3771,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-ddr_ch02_dl_cti_0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3674,6 +3784,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-ddr_ch13_dl_cti_0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3686,6 +3797,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-lpass_dl_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3696,9 +3808,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10961000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-gpu_isdb_cti";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3708,9 +3820,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10962000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-gpu_cortex_m3";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3720,9 +3832,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10901000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-gpu_dl";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3735,6 +3847,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-iris_dl_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3747,6 +3860,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-mdss_dl_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3759,6 +3873,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-turing_dl_cti_0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3771,6 +3886,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-turing_q6_cti";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3782,6 +3898,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-swao_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3792,9 +3909,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10b21000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-ddr_dl2_lpi";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3807,6 +3924,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-ddr_dl_1_cti_0";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -3817,9 +3935,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10b13000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cortex_m3";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3829,9 +3947,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10b41000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-lpass_lpi_cti1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3841,9 +3959,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10b51000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-lpass_lpi_cti3";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3853,9 +3971,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10b4b000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-lpass_q6_cti";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3865,9 +3983,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10b42000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-lpass_ssc_sdc_cti";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3879,6 +3997,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-apss_cti0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3890,6 +4009,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-apss_cti1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3901,6 +4021,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-apss_cti2";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3912,8 +4033,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-camera_dl";
-
 		status = "disabled";
+
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3925,8 +4046,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-riscv_cti";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 	};
@@ -3937,8 +4058,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-riscv_sifive_cti";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 	};
@@ -3949,6 +4070,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-mss_q6_cti";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3958,9 +4080,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10813000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-mss_vq6_cti";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3972,8 +4094,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-tmess_cti_0";
-
 		status = "disabled";
+
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3985,8 +4107,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-tmess_cti_1";
-
 		status = "disabled";
+
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3998,8 +4120,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-tmess_cti_2";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 	};
@@ -4011,8 +4133,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-tmess_cti_3";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 	};
@@ -4023,8 +4145,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-tmess_cti_4";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 	};
@@ -4035,8 +4157,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-tmess_cpu";
-
 		status = "disabled";
+
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 	};
@@ -4047,6 +4169,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-modem_tp_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -4059,6 +4182,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-apss_atb_cti";
+		status = "disabled";
 
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
@@ -4069,9 +4193,9 @@
 		compatible = "arm,coresight-cti", "arm,primecell";
 		reg = <0x10d11000 0x1000>;
 
-		status = "disabled";
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-ddrss_shrm2";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4083,6 +4207,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu0";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4094,8 +4219,8 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-spss_cti";
-
 		status = "disabled";
+
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4107,6 +4232,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu1";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4118,6 +4244,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu2";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4129,6 +4256,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu3";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4140,6 +4268,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu4";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4151,6 +4280,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu5";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4162,6 +4292,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu6";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4173,6 +4304,7 @@
 
 		arm,primecell-periphid = <0x000bb922>;
 		coresight-name = "coresight-cti-cpu7";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4189,6 +4321,7 @@
 		tgu-timer-counters = <8>;
 
 		coresight-name = "coresight-tgu-ipcb";
+		status = "disabled";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4199,6 +4332,8 @@
 		cpu = <&CPU0>;
 
 		coresight-name = "coresight-ete0";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <1>;
 		out-ports {
@@ -4215,6 +4350,8 @@
 		cpu = <&CPU1>;
 
 		coresight-name = "coresight-ete1";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <2>;
 		out-ports {
@@ -4231,6 +4368,8 @@
 		cpu = <&CPU2>;
 
 		coresight-name = "coresight-ete2";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <3>;
 		out-ports {
@@ -4247,6 +4386,8 @@
 		cpu = <&CPU3>;
 
 		coresight-name = "coresight-ete3";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <4>;
 		out-ports {
@@ -4263,6 +4404,8 @@
 		cpu = <&CPU4>;
 
 		coresight-name = "coresight-ete4";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <5>;
 		out-ports {
@@ -4279,6 +4422,8 @@
 		cpu = <&CPU5>;
 
 		coresight-name = "coresight-ete5";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <6>;
 		out-ports {
@@ -4295,6 +4440,8 @@
 		cpu = <&CPU6>;
 
 		coresight-name = "coresight-ete6";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <7>;
 		out-ports {
@@ -4311,6 +4458,8 @@
 		cpu = <&CPU7>;
 
 		coresight-name = "coresight-ete7";
+		status = "disabled";
+
 		qcom,skip-power-up;
 		atid = <8>;
 		out-ports {
@@ -4325,6 +4474,7 @@
 	funnel_ete {
 		compatible = "arm,coresight-static-funnel";
 		coresight-name = "coresight-funnel-ete";
+		status = "disabled";
 
 		out-ports {
 			port {

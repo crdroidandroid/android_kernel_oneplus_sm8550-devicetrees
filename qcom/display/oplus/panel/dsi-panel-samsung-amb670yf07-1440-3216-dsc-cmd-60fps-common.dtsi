@@ -14,6 +14,7 @@
 				qcom,mdss-dsi-panel-jitter = <0x4 0x1>;
 
 				/* ofp config */
+				oplus,ofp-need-to-separate-backlight;
 				oplus,ofp-hbm-on-period = <2>;
 				oplus,ofp-need-to-sync-data-in-aod-unlocking;
 

@@ -2,8 +2,8 @@
 
 //dtype, last, wait, ip, opt, dlen
 //sys*/
-//commit: bf961f687a8d298e3029480804b8308f41862cd6
-//build : 2022-11-14 14:45:47
+//commit: 7e7ee2aab79827c5bd326d8c5ea86b9e2fd6e5bb
+//build : 2023-07-27 11:39:30
 &soc {
 pxlw {
 mdss_iris_cfg_samsung_amb670yf07_1440_3216_dsc_cmd: pxlw,mdss_iris_cfg_samsung_amb670yf07_1440_3216_dsc_cmd {
@@ -31,10 +31,11 @@ mdss_iris_cfg_samsung_amb670yf07_1440_3216_dsc_cmd: pxlw,mdss_iris_cfg_samsung_a
   pxlw,panel-te = <120>;
   pxlw,ap-te = <120>;
   pxlw,esd-ctrl = <7>;
-  pxlw,timing-cmd-map = [02 01 00 02 03 04 05 05];
+  pxlw,timing-cmd-map = [02 01 00 FF 03 04 05 FF];
   pxlw,master-timing-cmd-map = [00 00 00 00 03 03 03 03];
   pxlw,frc-dsc-init-delay= <4047>;
   pxlw,cmd-param-from-firmware = <1>;
+  pxlw,ocp_read_by_i2c = <1>;
   pxlw,iris-lightup-sequence-pre0= [
     /*sys*/
     00  a0  00
@@ -91,11 +92,11 @@ mdss_iris_cfg_samsung_amb670yf07_1440_3216_dsc_cmd: pxlw,mdss_iris_cfg_samsung_a
     /*gamma,65-bin*/
     86  00  01
     /*3dlut,17-bin*/
-    81  02  01
-    81  03  01
+    81  01  01
     81  04  01
     81  05  01
     81  06  01
+    81  08  01
     81  09  01
     81  0a  01
     81  0b  01

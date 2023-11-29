@@ -6,14 +6,14 @@
 #include <dt-bindings/interconnect/qcom,kalama.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
+#include <dt-bindings/oplus/hw-id.h>
 
-#include "xueying_camera_overlay_common.dtsi"
-#include "xueying_camera_tele_ois_firmware.dtsi"
-#include "xueying_camera_main_actuator_pid.dtsi"
+#include "aston_camera_overlay_common-T0.dtsi"
 / {
-	model = "Qualcomm Technologies, Inc. Kalama MTP";
+    model = "Qualcomm Technologies, Inc. Kalama MTP,aston";
 	compatible = "qcom,kalama-mtp", "qcom,kalama", "qcom,mtp";
 	qcom,msm-id = <519 0x10000>, <536 0x10000>, <519 0x20000>, <536 0x20000>;
 	qcom,board-id = <0x10008 0>;
-	oplus,project-id = <22003 22203 22899>;
+	oplus,project-id = <23861>;
+	oplus,hw-id = <OPLUS_T0 OPLUS_T1>;
 };

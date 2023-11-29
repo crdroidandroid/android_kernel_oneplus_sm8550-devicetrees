@@ -53,9 +53,9 @@
 		oplus,mdss-dsi-panel-status-match-modes = <0x00000000>;
 
 		qcom,mdss-dsi-display-timings {
-			timing@fhd_sdc_120 {
+			timing@fhd_sa_120 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-120fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <6200>;
+				//qcom,mdss-mdp-transfer-time-us = <6000>;
 				qcom,mdss-dsi-panel-framerate = <120>;
 				qcom,mdss-dsi-panel-clockrate = <825600000>;
 				qcom,mdss-dsi-panel-width = <1080>;
@@ -86,9 +86,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@fhd_sdc_90 {
+			timing@fhd_sa_90 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-90fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <6200>;
+				//qcom,mdss-mdp-transfer-time-us = <6000>;
 				qcom,mdss-dsi-panel-framerate = <90>;
 				qcom,mdss-dsi-panel-clockrate = <825600000>;
 				qcom,mdss-dsi-panel-width = <1080>;
@@ -119,9 +119,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@fhd_sdc_60 {
+			timing@fhd_sa_60 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-60fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <6200>;
+				//qcom,mdss-mdp-transfer-time-us = <6000>;
 				qcom,mdss-dsi-timing-default;
 				qcom,mdss-dsi-panel-framerate = <60>;
 				qcom,mdss-dsi-panel-clockrate = <825600000>;
@@ -153,9 +153,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@fhd_oplus_120 {
+			timing@fhd_oa_120 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-120fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <6200>;
+				//qcom,mdss-mdp-transfer-time-us = <6000>;
 				qcom,mdss-dsi-panel-framerate = <120>;
 				qcom,mdss-dsi-panel-clockrate = <825600000>;
 				qcom,mdss-dsi-panel-width = <1080>;
@@ -186,9 +186,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@wqhd_sdc_60 {
+			timing@wqhd_sa_60 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-60fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <7500>;
+				qcom,mdss-mdp-transfer-time-us = <7700>;
 				qcom,mdss-dsi-panel-framerate = <60>;
 				qcom,mdss-dsi-panel-clockrate = <1363200000>;
 				qcom,mdss-dsi-panel-width = <1440>;
@@ -219,9 +219,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@wqhd_sdc_90 {
+			timing@wqhd_sa_90 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-90fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <7500>;
+				qcom,mdss-mdp-transfer-time-us = <7700>;
 				qcom,mdss-dsi-panel-framerate = <90>;
 				qcom,mdss-dsi-panel-clockrate = <1363200000>;
 				qcom,mdss-dsi-panel-width = <1440>;
@@ -252,9 +252,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@wqhd_sdc_120 {
+			timing@wqhd_sa_120 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-120fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <7300>;
+				qcom,mdss-mdp-transfer-time-us = <7500>;
 				qcom,mdss-dsi-panel-framerate = <120>;
 				qcom,mdss-dsi-panel-clockrate = <1363200000>;
 				qcom,mdss-dsi-panel-width = <1440>;
@@ -285,9 +285,9 @@
 				qcom,mdss-dsc-block-prediction-enable;
 			};
 
-			timing@wqhd_oplus_120 {
+			timing@wqhd_oa_120 {
 				//#include "../dsi-panel-samsung-amb670yf07-1440-3216-dsc-cmd-120fps-common.dtsi"
-				qcom,mdss-mdp-transfer-time-us = <7300>;
+				qcom,mdss-mdp-transfer-time-us = <7500>;
 				qcom,mdss-dsi-panel-framerate = <120>;
 				qcom,mdss-dsi-panel-clockrate = <1363200000>;
 				qcom,mdss-dsi-panel-width = <1440>;
@@ -353,42 +353,42 @@
 	qcom,mdss-dsi-dc-backlight-level = <520>;
 
 	qcom,mdss-dsi-display-timings {
-		timing@fhd_sdc_120 {
+		timing@fhd_sa_120 {
 			qcom,mdss-dsi-panel-phy-timings = [00 1C 07 07 17 22 07 07 08 02 04 00 18 0C];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@fhd_sdc_90 {
+		timing@fhd_sa_90 {
 			qcom,mdss-dsi-panel-phy-timings = [00 1C 07 07 17 22 07 07 08 02 04 00 18 0C];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@fhd_sdc_60 {
+		timing@fhd_sa_60 {
 			qcom,mdss-dsi-panel-phy-timings = [00 1C 07 07 17 22 07 07 08 02 04 00 18 0C];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@fhd_oplus_120 {
+		timing@fhd_oa_120 {
 			qcom,mdss-dsi-panel-phy-timings = [00 1C 07 07 17 22 07 07 08 02 04 00 18 0C];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@wqhd_sdc_60 {
+		timing@wqhd_sa_60 {
 			qcom,mdss-dsi-panel-phy-timings = [00 2C 0C 0C 1D 26 0C 0C 0B 02 04 00 24 11];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@wqhd_sdc_90 {
+		timing@wqhd_sa_90 {
 			qcom,mdss-dsi-panel-phy-timings = [00 2C 0C 0C 1D 26 0C 0C 0B 02 04 00 24 11];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@wqhd_sdc_120 {
+		timing@wqhd_sa_120 {
 			qcom,mdss-dsi-panel-phy-timings = [00 2C 0C 0C 1D 26 0C 0C 0B 02 04 00 24 11];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
 		};
-		timing@wqhd_oplus_120 {
+		timing@wqhd_oa_120 {
 			qcom,mdss-dsi-panel-phy-timings = [00 2C 0C 0C 1D 26 0C 0C 0B 02 04 00 24 11];
 			qcom,display-topology = <1 1 1>,<2 2 1>;
 			qcom,default-topology-index = <1>;
@@ -398,7 +398,7 @@
 			qcom,mdss-mdp-transfer-time-us = <7468>;  //same as main panel
 			qcom,mdss-dsi-panel-phy-timings = [00 2E 0C 0C 1D 1B 0C 0D 0B 02 04 00 25 11];
 			qcom,display-topology = <1 0 1>,<2 0 1>;
-			qcom,default-topology-index = <0>;
+			qcom,default-topology-index = <1>;
 		};
 	};
 };

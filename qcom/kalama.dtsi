@@ -28,7 +28,7 @@
 
 
 	chosen: chosen {
-			bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 log_buf_len=1M kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=0 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket";
+			bootargs = "console=ttynull loglevel=6 kpti=0 log_buf_len=1M kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=0 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket";
 	};
 
 	reserved_memory: reserved-memory { };
@@ -465,9 +465,10 @@
 		reg = <0x0 0x9e980000 0x0 0x80000>;
 	};
 
+	/*  reg = <0x0 0x9ea00000 0x0 0x4080000>;  */
 	adspslpi_mem: adspslpi_region@9ea00000 {
 		no-map;
-		reg = <0x0 0x9ea00000 0x0 0x4080000>;
+		reg = <0x0 0x9ea00000 0x0 0x4880000>;
 	};
 
 	/* uefi region can be reused by apps */
@@ -3966,3 +3967,20 @@
 		reg = <0x42>;
 	};
 };
+
+//#ifdef OPLUS_ARCH_EXTENDS
+//Add for audio
+&i2s1_sd1_active {
+	config {
+		/delete-property/ bias-disable;
+		bias-pull-down;         /* PULL DOWN */
+	};
+};
+
+&tdm1_dout_active {
+	config {
+		/delete-property/ bias-disable;
+		bias-pull-down;         /* PULL DOWN */
+	};
+};
+//#endif /* OPLUS_ARCH_EXTENDS */

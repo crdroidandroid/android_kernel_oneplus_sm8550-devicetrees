@@ -1613,7 +1613,7 @@
 
 			config {
 				pins = "gpio69";
-				drive-strength = <6>;
+				drive-strength = <2>;
 				bias-disable;
 			};
 		};
@@ -2209,6 +2209,9 @@
 				pins = "gpio6";
 				drive-strength = <2>;
 				bias-pull-up;
+				/*#ifdef OPLUS_FEATURE_CHG_BASIC*/
+				qcom,i2c_pull;
+				/*endif OPLUS_FEATURE_CHG_BASIC*/
 			};
 		};
 
@@ -2222,6 +2225,9 @@
 				pins = "gpio7";
 				drive-strength = <2>;
 				bias-pull-up;
+				/*#ifdef OPLUS_FEATURE_CHG_BASIC*/
+				qcom,i2c_pull;
+				/*endif OPLUS_FEATURE_CHG_BASIC*/
 			};
 		};
 

@@ -224,6 +224,10 @@
 	usb_nop_phy: usb_nop_phy {
 		compatible = "usb-nop-xceiv";
 	};
+	oplus_battery_log: oplus,battery_log {
+		compatible = "oplus,battery_log";
+		oplus,battery_log_support;
+	};
 };
 
 &usb0 {
@@ -238,6 +242,8 @@
 &battery_charger {
 	//for oplus chg framework:
 	oplus,chg_ops = "plat-pmic";
+	qcom,pmic_ftm_vph = "/sys/bus/spmi/drivers/pmic-spmi/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:vadc@9000/iio:device0/in_voltage_pm8550b_vph_pwr_input";
+	qcom,pmic_ftm_vbat = "/sys/bus/spmi/drivers/pmic-spmi/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:vadc@9000/iio:device0/in_voltage_pm8550b_vbat_sns_qbg_input";
 	qcom,smart_charging_screenoff;
 	qcom,smart_chg_bcc_support;
 	qcom,voocphy_support = <1>;
@@ -675,7 +681,7 @@
 		pins = "gpio5";
 		function = "normal";
 		bias-disable;
-		power-source = <1>;
+		power-source = <0>;
 		output-high;
 		qcom,drive-strength = <3>;
 	};
@@ -683,7 +689,7 @@
 		pins = "gpio5";
 		function = "normal";
 		bias-disable;
-		power-source = <1>;
+		power-source = <0>;
 		output-low;
 		qcom,drive-strength = <3>;
 	};

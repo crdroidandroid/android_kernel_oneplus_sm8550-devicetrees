@@ -4200,7 +4200,7 @@
 
 		coresight-name = "coresight-ete0";
 		qcom,skip-power-up;
-		atid = <1>;
+		atid = <0x10>;
 		out-ports {
 			port {
 				ete0_out_funnel_ete: endpoint {
@@ -4216,7 +4216,7 @@
 
 		coresight-name = "coresight-ete1";
 		qcom,skip-power-up;
-		atid = <2>;
+		atid = <0x12>;
 		out-ports {
 			port {
 				ete1_out_funnel_ete: endpoint {
@@ -4232,7 +4232,7 @@
 
 		coresight-name = "coresight-ete2";
 		qcom,skip-power-up;
-		atid = <3>;
+		atid = <0x14>;
 		out-ports {
 			port {
 				ete2_out_funnel_ete: endpoint {
@@ -4248,7 +4248,7 @@
 
 		coresight-name = "coresight-ete3";
 		qcom,skip-power-up;
-		atid = <4>;
+		atid = <0x16>;
 		out-ports {
 			port {
 				ete3_out_funnel_ete: endpoint {
@@ -4264,7 +4264,7 @@
 
 		coresight-name = "coresight-ete4";
 		qcom,skip-power-up;
-		atid = <5>;
+		atid = <0x18>;
 		out-ports {
 			port {
 				ete4_out_funnel_ete: endpoint {
@@ -4280,7 +4280,7 @@
 
 		coresight-name = "coresight-ete5";
 		qcom,skip-power-up;
-		atid = <6>;
+		atid = <0x1a>;
 		out-ports {
 			port {
 				ete5_out_funnel_ete: endpoint {
@@ -4296,7 +4296,7 @@
 
 		coresight-name = "coresight-ete6";
 		qcom,skip-power-up;
-		atid = <7>;
+		atid = <0x1c>;
 		out-ports {
 			port {
 				ete6_out_funnel_ete: endpoint {
@@ -4312,7 +4312,7 @@
 
 		coresight-name = "coresight-ete7";
 		qcom,skip-power-up;
-		atid = <8>;
+		atid = <0x1e>;
 		out-ports {
 			port {
 				ete7_out_funnel_ete: endpoint {

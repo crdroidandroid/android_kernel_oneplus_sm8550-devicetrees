@@ -1,4 +1,6 @@
 // Add the thermistors of explorer and svooc
+#include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
+
 &pmk8550_vadc {
 	pinctrl-0 = <&pm8550_svooc_therm_default>;
 	pinctrl-names = "default";
@@ -196,4 +198,26 @@
         irq-gpios = <&pm8550ve_f_gpios 6 0>;
         status = "ok";
     };
+};
+
+&apps_rsc_drv2 {
+	rpmh-regulator-bobb1 {
+		compatible = "qcom,rpmh-vrm-regulator";
+		qcom,resource-name = "bobb1";
+		qcom,regulator-type = "pmic5-bob";
+		qcom,supported-modes =
+			<RPMH_REGULATOR_MODE_AUTO
+			 RPMH_REGULATOR_MODE_HPM>;
+		qcom,mode-threshold-currents = <0 2000000>;
+		qcom,send-defaults;
+
+		BOB1: pm_humu_bob1: regulator-pm-humu-bob1 {
+			regulator-name = "pm_humu_bob1";
+			qcom,set = <RPMH_REGULATOR_SET_ALL>;
+			regulator-min-microvolt = <3008000>;
+			regulator-max-microvolt = <3960000>;
+			qcom,init-voltage = <3296000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_AUTO>;
+		};
+	};
 };

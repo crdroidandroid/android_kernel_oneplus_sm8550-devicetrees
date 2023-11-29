@@ -13,6 +13,21 @@ OPLUS_KALAMA_BOARDS += \
 else ifeq ($(CONFIG_XUEYING_DTB),y)
 OPLUS_KALAMA_BOARDS += \
 		xueying-22003-kalama-overlay.dtbo
+else ifeq ($(CONFIG_XIGUA_DTB),y)
+OPLUS_KALAMA_BOARDS += \
+		xigua-22851-kalama-overlay.dtbo \
+		xigua-22851-kalama-overlay-EVB.dtbo
+else ifeq ($(CONFIG_ZONDA_DTB),y)
+OPLUS_KALAMA_BOARDS += \
+		zonda-22635-kalama-overlay.dtbo \
+		zonda-23603-kalama-overlay.dtbo
+else ifeq ($(CONFIG_ASTON_DTB),y)
+OPLUS_KALAMA_BOARDS += \
+		aston-23801-kalama-overlay.dtbo \
+		aston-23861-kalama-overlay.dtbo \
+		aston-23801-kalama-overlay-T0.dtbo \
+		aston-23861-kalama-overlay-T0.dtbo \
+		aston-23801-kalama-overlay-EVB.dtbo
 endif
 
 kalama-overlays-dtb-y += $(OPLUS_KALAMA_BOARDS) $(KALAMA_BASE_DTB) $(KALAMA_APQ_BASE_DTB)

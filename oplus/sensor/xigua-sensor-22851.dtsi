@@ -16,18 +16,11 @@
 		smem-id    = <608>;
 	};
 	ssc_interactive {
-		is-folding-device;
 		sup-power-fb;
+		sup-hbm-mode = <1>;
 		need_lb_algo = <1>;
 
-		// big screen
 		primary_lb_brl_info {
-			brl_thrd_num = <1>;
-			brl_thrd = <1>;
-			brl_l2h_thrd = <1>;
-		};
-		// small screen
-		secondary_lb_brl_info {
 			brl_thrd_num = <1>;
 			brl_thrd = <1>;
 			brl_l2h_thrd = <1>;
@@ -35,34 +28,24 @@
 	};
 	oplus_sensor {
 		compatible = "oplus,sensor-devinfo";
-		is-folding-device;
 		/*virtual sensor*/
 		mag_fusion {
 			sensor-type = <6>;//OPLUS_MAG_FUSION
 			is-virtual-sensor;
-			fusion-type = <1>;//AKM_FUSION
-			fold-feature = <1>;
-		};
-		pad_light@0 {
-			sensor-name = <0x01>; // pad tcs3720
-			sensor-index = <0>; // source num
-			sensor-type = <11>; // pad_light
-			first-source = "AC052_P_1_A0002_dsc_cmd";
-			second-source = "AC052_P_3_A0003_dsc_cmd";
+			fusion-type = <0>;//OPLUS_FUSION
+			fold-feature = <0>;
 		};
 	};
-	consumer_ir_core {
+	consumer_ir_core: consumer_ir_core {
 		compatible = "oplus,kookong_ir_core";
 		status = "okay";
-		vdd-type = <0>; /*0: internal LDO , 1: external LOD*/
+		vdd-type = <0>; /*0: internal LDO , 1: external LDO*/
 		vdd-supply = <&pm_humu_l9>;
 		vdd-min-vol = <3160000>;
 		vdd-max-vol = <3160000>;
 	};
-	//#endif /*OPLUS_FEATURE_SENSOR_SMEM*/
 };
 
-//add for oplus consumerIr SPI mode
 &qupv3_se11_spi{
 	status = "ok";
 	consumerIr@0 {
@@ -74,4 +57,3 @@
 		ir-spi-mode = <0>;
 	};
 };
-

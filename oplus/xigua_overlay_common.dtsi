@@ -137,7 +137,7 @@
 
 // Add the thermistors of explorer and svooc
 &pmk8550_vadc {
-	pinctrl-0 = <&pm8550_svooc_therm_default>;
+	pinctrl-0 = <&pm8550_svooc_therm_default &gpio1_adc_default>;
 	pinctrl-names = "default";
 
 	pm8550_svooc_therm {
@@ -203,6 +203,40 @@
 		};
 	};
 };
+
+//#ifdef OPLUS_FEATURE_CHG_BASIC
+&thermal_zones {
+	subboard_them {
+		polling-delay-passive = <0>;
+		polling-delay = <0>;
+		thermal-governor = "user_space";
+		thermal-sensors = <&pmk8550_vadc PM8550B_ADC5_GEN3_AMUX3_GPIO6_100K_PU>;
+		wake-capable-sensor;
+		trips {
+			active-config0 {
+				temperature = <125000>;
+				hysteresis = <1000>;
+				type = "passive";
+			};
+		};
+	};
+
+	batt0_con_therm_adc {
+		polling-delay-passive = <0>;
+		polling-delay = <0>;
+		thermal-governor = "user_space";
+		thermal-sensors = <&pmk8550_vadc PM8550B_ADC5_GEN3_AMUX4_GPIO12_100K_PU>;
+		wake-capable-sensor;
+		trips {
+			active-config0 {
+				temperature = <125000>;
+				hysteresis = <1000>;
+				type = "passive";
+			};
+		};
+	};
+};
+//#endif /* OPLUS_FEATURE_CHG_BASIC */
 
 &soc {
 	devinfo {
@@ -402,17 +436,6 @@
 		prevention,finger_hold_max_rx_exit_distance = <5 160 1000>;
 		prevention,max_rx_exit_distance = <1 5 150 160 800>;
 		prevention,dynamic_finger_hold_exit_distance = <1 160 1000 320>;
-		prevention,edge_sliding_matched_support = <1 250 3 0>;
-
-		//grip v4.2 reclining mode
-		prevention,reclining_mode_support = <1>;
-		prevention,long_eliminate_point_type_recli = <2 5760 4288 160 12864 500 1>;
-		prevention,finger_hold_differ_size_recli = <1 0 180 400>;
-		prevention,finger_hold_max_rx_exit_distance_recli = <4 160 1000>;
-		prevention,max_rx_exit_distance_recli = <1 4 100 160 800>;
-		prevention,dynamic_finger_hold_exit_distance_recli = <1 160 1000 320>;
-		prevention,edge_sliding_matched_support_recli = <1 200 3 0>;
-		prevention,long_edge_condition_recli = <200 90 120 80>;
 
 		touchpanel,smooth-level = <0 1 2 4 7 9>;
 		touchpanel,smooth-level-charging = <0 2 4 7 8 9>;
@@ -447,17 +470,13 @@
 		report_rate_white_list_support;
 		kernel_grip_support;
 		//grip_no_driver_support;
-		skip_reinit_device_support;
 		health_monitor_support;
 		black_gesture_indep_support;
 		algorithm_support;
 		snr_read_support;
-		palm_to_sleep_support;
 		exception_upload_support;
 		sportify_aod_gesture_support;
 		major_rate_limit_support;
-		fingerprint_not_report_in_suspend;
-
 		/*
 		 *Virtual Key Config:
 		 *1:touchpanel,button-type: <virtualkey_type  supportted_button-map>
@@ -493,7 +512,7 @@
 		pinctrl-1 = <&sim2_det_no_pull>;
 		pinctrl-2 = <&sim2_det_pull_high>;
 		pinctrl-3 = <&sim2_det_pull_low>;
-		oplus,oplus-gpio-esim = <&pm8550vs_g_gpios 4 0>;
+		oplus,oplus-gpio-esim = <&pm8550vs_g_gpios 1 0>;
 		oplus,oplus-esim-det = <&pm8550_gpios 9 0>;
 		oplus,oplus-sim2-det = <&pm8550vs_c_gpios 5 0>;
 		oplus,uim-reset-pin = "modem_solution";
@@ -533,7 +552,7 @@
 
 &pm8550vs_g_gpios {
 	esim_gpio: esim_gpio  {
-			pins = "gpio4";
+			pins = "gpio1";
 			function = "normal";
 			bias-disable; /* NO pull */
 			qcom,drive-strength = <2>; /* 2 MA */
@@ -614,3 +633,13 @@
 	};
 };
 /* #endif */
+
+&pmk8550_gpios {
+	gpio1_adc {
+		gpio1_adc_default: gpio1_adc_default {
+			pins = "gpio1";
+			function = "normal";
+			bias-high-impedance; /* DISABLE GPIO1 for ADC*/
+		};
+	};
+};

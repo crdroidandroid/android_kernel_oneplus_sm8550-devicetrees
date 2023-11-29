@@ -51,9 +51,9 @@
 		"VA DMIC2", "VA MIC BIAS1",
 		"VA DMIC3", "VA MIC BIAS1";
 
-	qcom,mi2s-audio-intf = <0>;
-	qcom,tdm-audio-intf = <1>;
-	qcom,tdm-max-slots = <4>;
+	qcom,mi2s-audio-intf = <1>;
+	qcom,tdm-audio-intf = <0>;
+
 	qcom,sec-mi2s-gpios = <&cdc_sec_mi2s_gpios>;
 
 	qcom,msm-mbhc-usbc-audio-supported = <1>;
@@ -74,10 +74,10 @@
 		status = "ok";
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
-		pinctrl-0 = <&tdm1_clk_active &tdm1_ws_active
-				&tdm1_din_active &tdm1_dout_active>;
-		pinctrl-1 = <&tdm1_clk_sleep &tdm1_ws_sleep
-				&tdm1_din_sleep &tdm1_dout_sleep>;
+		pinctrl-0 = <&i2s1_sck_active &i2s1_ws_active
+				&i2s1_sd0_active &i2s1_sd1_active>;
+		pinctrl-1 = <&i2s1_sck_sleep &i2s1_ws_sleep
+				&i2s1_sd0_sleep &i2s1_sd1_sleep>;
 		#gpio-cells = <0>;
 	};
 };
@@ -92,7 +92,6 @@
 		tfa9874_vdd-supply = <&L15B>;
 		tfa_min_range = <5000>;
 		tfa_max_range = <8000>;
-		tfa_default_mohm = <6200>;
 		tfa_channel = <0>;
 		is_use_freq = <1>;
 		status = "ok";
@@ -104,20 +103,7 @@
 		tfa9874_vdd-supply = <&L15B>;
 		tfa_min_range = <5000>;
 		tfa_max_range = <8000>;
-		tfa_default_mohm = <6200>;
 		tfa_channel = <1>;
-		is_use_freq = <1>;
-		status = "ok";
-	};
-	tfa98xx@36 {
-		compatible = "nxp,tfa98xx";
-		reg = <0x36>;
-		reset-gpio = <&tlmm 56 0x00>;
-		tfa9874_vdd-supply = <&L15B>;
-		tfa_min_range = <5000>;
-		tfa_max_range = <8000>;
-		tfa_default_mohm = <6200>;
-		tfa_channel = <2>;
 		is_use_freq = <1>;
 		status = "ok";
 	};
@@ -129,42 +115,32 @@
 		//for nxp speaker
 		oplus,speaker-vendor = "nxp";
 		oplus,speaker-i2s-id = <1>;
-		oplus,speaker-codec-name = "tfa98xx.4-0034", "tfa98xx.4-0035", "tfa98xx.4-0036";
-		oplus,speaker-codec-dai-name = "tfa98xx-aif-4-34", "tfa98xx-aif-4-35", "tfa98xx-aif-4-36";
+		oplus,speaker-codec-name = "tfa98xx.4-0034", "tfa98xx.4-0035";
+		oplus,speaker-codec-dai-name = "tfa98xx-aif-4-34", "tfa98xx-aif-4-35";
 	};
 };
 
-&tdm1_clk_active {
+&i2s1_sck_active {
 	config {
-		pins = "gpio121";
-		drive-strength = <4>;
+		drive-strength = <6>;   /* 6 mA */
 	};
 };
 
-&tdm1_ws_active {
+&i2s1_ws_active {
 	config {
-		pins = "gpio123";
-		drive-strength = <4>;
+		drive-strength = <6>;   /* 6 mA */
 	};
 };
 
-&tdm1_din_active {
+&i2s1_sd0_active {
 	config {
-		pins = "gpio122";
-		drive-strength = <4>;
+		drive-strength = <6>;   /* 6 mA */
 	};
 };
 
-&tdm1_dout_active {
+&i2s1_sd1_active {
 	config {
-		pins = "gpio124";
-		drive-strength = <4>;
+		drive-strength = <6>;   /* 6 mA */
 		bias-pull-down;
-	};
-};
-
-&wcd938x_reset_active {
-	config {
-		drive-strength = <6>;
 	};
 };

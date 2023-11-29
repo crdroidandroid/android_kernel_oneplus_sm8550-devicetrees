@@ -20,6 +20,9 @@ endif
 dtbo-$(CONFIG_WUKONG_DTB) += oplus/wukong-21131-audio-kalama-overlay.dtbo
 dtbo-$(CONFIG_SALAMI_DTB) += oplus/salami-22811-audio-kalama-overlay.dtbo
 dtbo-$(CONFIG_XUEYING_DTB) += oplus/xueying-22003-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_ZONDA_DTB) += oplus/zonda-22635-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_XIGUA_DTB) += oplus/xigua-22851-audio-kalama-overlay.dtbo
+dtbo-$(CONFIG_ASTON_DTB) += oplus/aston-23801-audio-kalama-overlay.dtbo
 #OPLUS_DTS_OVERLAY end
 endif
 

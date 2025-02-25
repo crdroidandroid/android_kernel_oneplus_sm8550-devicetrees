@@ -73,7 +73,10 @@
 	nq@64 {
 		compatible = "rtc6226";
 		reg = <0x64>;
-		fmint-gpio = <&tlmm 113 0>;
+//#ifdef OPLUS_BUG_COMPATIBILITY
+//remove fm gpio config
+		//fmint-gpio = <&tlmm 113 0>;
+//#endif /* OPLUS_BUG_COMPATIBILITY */
 		vdd-supply = <&L18B>;
 		rtc6226,vdd-supply-voltage = <2800000 2800000>;
 		rtc6226,vdd-load = <15000>;

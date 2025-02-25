@@ -2572,3 +2572,12 @@
 		};
 	};
 };
+
+//#ifdef OPLUS_ARCH_EXTENDS
+&lpi_i2s1_sd1_active {
+	config {
+		/delete-property/ bias-disable;
+		bias-pull-down;         /* PULL DOWN */
+	};
+};
+//#endif /* OPLUS_ARCH_EXTENDS */

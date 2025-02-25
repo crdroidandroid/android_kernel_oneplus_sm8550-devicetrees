@@ -30,7 +30,7 @@
 			};
 
 			sd-cd {
-				pins = "gpio9";
+				pins = "gpio149";
 				bias-pull-up;
 				drive-strength = <2>;
 			};
@@ -56,8 +56,8 @@
 			};
 
 			sd-cd {
-				pins = "gpio9";
-				bias-pull-up;
+				pins = "gpio149";
+				bias-disable;
 				drive-strength = <2>;
 			};
 		};

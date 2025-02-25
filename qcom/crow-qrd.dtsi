@@ -211,7 +211,9 @@
 	pinctrl-0 = <&sdc2_on>;
 	pinctrl-1 = <&sdc2_off>;
 
-	cd-gpios = <&tlmm 9 GPIO_ACTIVE_LOW>;
+	/*oplus design sd_detect active is HIGH when sd card plug in*/
+	/*cd-gpios = <&tlmm 9 GPIO_ACTIVE_LOW>;*/
+	cd-gpios = <&tlmm 149 GPIO_ACTIVE_HIGH>;
 };
 
 &qupv3_se8_i2c {

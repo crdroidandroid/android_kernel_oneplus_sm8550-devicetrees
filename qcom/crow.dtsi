@@ -26,7 +26,7 @@
 	#size-cells = <2>;
 
 	chosen: chosen {
-		bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 loop.max_part=7 allow_mismatched_32bit_el0 log_buf_len=256K kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops printk.console_no_auto_verbose=1 kasan=off can.stats_timer=0 pcie_ports=compat cpufreq.default_governor=performance cgroup.memory=nokmem,nosocket swiotlb=noforce disable_dma32=on page_poison=on";
+		bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 loop.max_part=7 allow_mismatched_32bit_el0 log_buf_len=1M kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops printk.console_no_auto_verbose=1 kasan=off can.stats_timer=0 pcie_ports=compat cpufreq.default_governor=performance cgroup.memory=nokmem,nosocket swiotlb=noforce disable_dma32=on page_poison=on";
 		stdout-path = "/soc/qcom,qupv3_0_geni_se@8c0000/qcom,qup_uart@894000";
 	};
 
@@ -36,6 +36,8 @@
 
 	reserved_memory: reserved-memory { };
 
+	/* The zone movable is not used, so it is commented out. */
+	/*
 	mem-offline {
 		compatible = "qcom,mem-offline";
 		offline-sizes = <0x1 0x40000000 0x0 0x40000000>,
@@ -44,6 +46,7 @@
 		granule = <512>;
 		mboxes = <&qmp_aop 0>;
 	};
+	*/
 
 	firmware: firmware {};
 
@@ -384,8 +387,9 @@
 	ramoops_mem: ramoops_region {
 		compatible = "ramoops";
 		alloc-ranges = <0x0 0x00000000 0xffffffff 0xffffffff>;
-		size = <0x0 0x200000>;
+		size = <0x0 0x240000>;
 		pmsg-size = <0x200000>;
+		console-size = <0x40000>;
 		mem-type = <2>;
 	};
 
@@ -400,7 +404,9 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0xC00000>;
+		// #ifdef OPLUS_FEATURE_SECURITY_COMMON
+		size = <0x0 0x1400000>;
+		// #endif /* OPLUS_FEATURE_SECURITY_COMMON */
 	};
 
 	qseecom_ta_mem: qseecom_ta_region {
@@ -408,7 +414,9 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0xC00000>;
+		// #ifdef OPLUS_FEATURE_SECURITY_COMMON
+		size = <0x0 0x1400000>;
+		// #endif /* OPLUS_FEATURE_SECURITY_COMMON */
 	};
 
 	adsp_mem_heap: adsp_heap_region {
@@ -680,6 +688,12 @@
 			#clock-cells = <1>;
 		};
 
+	};
+
+	aop-msg-client {
+		compatible = "qcom,debugfs-qmp-client";
+		mboxes = <&qmp_aop 0>;
+		mbox-names = "aop";
 	};
 
 	rimps_log: qcom,rimps_log@d8140000 {
@@ -1206,6 +1220,30 @@
 	qcom,glink {
 		compatible = "qcom,glink";
 	};
+
+	// #ifdef OPLUS_FEATURE_UFF_FINGERPRINT
+	fingerprint_dev {
+		status = "ok";
+		compatible = "oplus,fp_spi";
+		interrupt-parent = <&tlmm>;
+		interrupts = <121 0>;
+		power-mode = <1> ; /*0: power mode not set, 1: ldo power, 2: gpio power, 3: auto power */
+		ldo-supply = <&L14B>;
+		ldo-config = <3080000 3080000 150000>;
+		uff,gpio_irq = <&tlmm 121 0x1>;
+		uff,gpio_reset = <&tlmm 131 0x0>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&fp_irq_gpio_default>,<&fp_reset_gpio_default>;
+		notify_tpinfo_flag = <1>;
+		power-num = <1>;
+		power_source_1 {
+			power-mode = <1>;
+			power-name = "ldo";
+			power-config = "ldo-config";
+			delay-time = <0>;
+		};
+	};
+	//#endif /*OPLUS_FEATURE_UFF_FINGERPRINT*/
 
 	psci {
 		compatible = "arm,psci-1.0";
@@ -3293,3 +3331,35 @@
 };
 
 #include "crow-thermal.dtsi"
+
+&tlmm {
+	// #ifdef OPLUS_FEATURE_UFF_FINGERPRINT
+	fingerprint_dev{
+		fp_irq_gpio_default: fp_irq_gpio_default {
+			mux {
+				pins = "gpio121";
+				function = "gpio";
+			};
+			config {
+				pins = "gpio121";
+				drive-strength = <2>;
+				bias-disable;
+				input-enable;
+			};
+		};
+
+		fp_reset_gpio_default: fp_reset_gpio_default {
+			mux {
+				pins = "gpio131";
+				function = "gpio";
+			};
+			config {
+				pins = "gpio131";
+				drive-strength = <2>;
+				bias-disable;
+				output-low;
+			};
+		};
+	};
+	//#endif /*OPLUS_FEATURE_UFF_FINGERPRINT*/
+};

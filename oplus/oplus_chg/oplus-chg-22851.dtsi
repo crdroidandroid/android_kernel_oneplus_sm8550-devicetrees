@@ -232,6 +232,7 @@
 	qcom,pmic_ftm_vbat = "/sys/bus/spmi/drivers/pmic-spmi/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:vadc@9000/iio:device0/in_voltage_pm8550b_vbat_sns_qbg_input";
 	qcom,smart_charging_screenoff;
 	qcom,voocphy_support = <2>;
+	oplus,full_limit_curr_support;
 	qcom,input_current_charger_ma = <2000>;
 	qcom,pd_input_current_charger_ma = <2000>;
 	qcom,qc_input_current_charger_ma = <2000>;
@@ -814,6 +815,7 @@
 		qcom,charging_switch1-gpio = <&pm8550b_gpios 8 0x00>;
 
 		qcom,external_gauge_support;
+		oplus,full_limit_curr_support;
 		qcom,voocphy_bidirect_cp_support;
 		qcom,voocphy_current_default = <91>;
 		qcom,copycat_vooc_support;

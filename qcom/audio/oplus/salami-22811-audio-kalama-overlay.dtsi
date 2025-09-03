@@ -144,3 +144,12 @@
 		bias-pull-down;
 	};
 };
+
+&glink_edge {
+	qcom,msm_adspsleepmon_rpmsg {
+		compatible = "qcom,msm-adspsleepmon-rpmsg";
+		qcom,glink-channels = "sleepmonglink-apps-adsp";
+		is_enable_sleep_daemon = <1>;
+		qcom,intents = <0x1000 8>;
+	};
+};

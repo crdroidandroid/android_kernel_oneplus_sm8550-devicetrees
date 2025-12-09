@@ -114,6 +114,13 @@
 					//Frequence Transition
 					39 00 00 40 00 00 04 FF 78 38 02
 					39 00 00 00 00 00 02 38 11
+					//Aod no black
+					39 00 00 40 00 00 04 FF 78 38 02
+					39 00 00 00 00 00 02 17 00
+					//Aod External power
+					39 00 00 40 00 00 04 FF 78 38 05
+					39 00 00 40 00 00 02 00 18
+					39 00 00 00 00 00 02 5F 4F
 					//IR IP ON
 					39 00 00 40 00 00 04 FF 78 38 00
 					39 00 00 00 00 00 02 95 10
@@ -170,8 +177,6 @@
 				];
 				qcom,mdss-dsi-lp1-command = [
 					/* AOD Mode ON */
-					39 00 00 40 00 00 04 FF 78 38 05
-					15 00 00 40 00 00 02 00 19
 					39 00 00 40 00 00 04 FF 78 38 00
 					05 00 00 40 00 00 01 39
 					39 00 00 40 00 00 04 FF 78 38 0C
@@ -315,6 +320,13 @@
 					//Frequence Transition
 					39 00 00 40 00 00 04 FF 78 38 02
 					39 00 00 00 00 00 02 38 12
+					//Aod no black
+					39 00 00 40 00 00 04 FF 78 38 02
+					39 00 00 00 00 00 02 17 00
+					//Aod External power
+					39 00 00 40 00 00 04 FF 78 38 05
+					39 00 00 40 00 00 02 00 18
+					39 00 00 00 00 00 02 5F 4F
 					//IR IP ON
 					39 00 00 40 00 00 04 FF 78 38 00
 					39 00 00 00 00 00 02 95 10
@@ -370,8 +382,6 @@
 				];
 				qcom,mdss-dsi-lp1-command = [
 					/* AOD Mode ON */
-					39 00 00 40 00 00 04 FF 78 38 05
-					15 00 00 40 00 00 02 00 19
 					39 00 00 40 00 00 04 FF 78 38 00
 					05 00 00 40 00 00 01 39
 					39 00 00 40 00 00 04 FF 78 38 0C
@@ -511,6 +521,13 @@
 					//Frequence Transition
 					39 00 00 40 00 00 04 FF 78 38 02
 					39 00 00 00 00 00 02 38 13
+					//Aod no black
+					39 00 00 40 00 00 04 FF 78 38 02
+					39 00 00 00 00 00 02 17 00
+					//Aod External power
+					39 00 00 40 00 00 04 FF 78 38 05
+					39 00 00 40 00 00 02 00 18
+					39 00 00 00 00 00 02 5F 4F
 					//IR IP ON
 					39 00 00 40 00 00 04 FF 78 38 00
 					39 00 00 00 00 00 02 95 10
@@ -566,8 +583,6 @@
 				];
 				qcom,mdss-dsi-lp1-command = [
 					/* AOD Mode ON */
-					39 00 00 40 00 00 04 FF 78 38 05
-					15 00 00 40 00 00 02 00 19
 					39 00 00 40 00 00 04 FF 78 38 00
 					05 00 00 40 00 00 01 39
 					39 00 00 40 00 00 04 FF 78 38 0C
@@ -663,6 +678,7 @@
 	qcom,dsi-select-clocks = "pll_byte_clk0", "pll_dsi_clk0";
 	/* ofp config */
 	oplus,ofp-fp-type = <0x08>;
+	oplus,ofp-longrui-aod-config = <0x06>;
 	oplus,ofp-need-to-wait-data-before-aod-on;
 	/* serial num config */
 	oplus,dsi-serial-number-enabled;

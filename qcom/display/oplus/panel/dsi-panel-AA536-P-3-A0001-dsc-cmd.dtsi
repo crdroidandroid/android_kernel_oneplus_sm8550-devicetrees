@@ -1864,7 +1864,7 @@
 	qcom,dsi-select-clocks = "pll_byte_clk0", "pll_dsi_clk0";
 	/* ofp config */
 	oplus,ofp-fp-type = <0x108>;
-	oplus,ofp-longrui-aod-config = <0x02>;
+	oplus,ofp-longrui-aod-config = <0x06>;
 	oplus,ofp-need-to-bypass-gamut;
 	oplus,ofp-need-to-wait-data-before-aod-on;
 	oplus,enhance_mipi_strength;

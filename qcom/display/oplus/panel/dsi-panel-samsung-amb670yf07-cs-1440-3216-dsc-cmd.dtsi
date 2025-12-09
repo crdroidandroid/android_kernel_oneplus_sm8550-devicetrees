@@ -1942,8 +1942,10 @@
 
 	/* aod/fod config */
 	oplus,ofp-fp-type = <0x188>;
+	oplus,ofp-longrui-aod-config = <0x04>;
 	oplus,ofp-need-to-bypass-gamut;
 	oplus,ofp-need-to-wait-data-before-aod-on;
+	oplus,dozedisable-esdcheck-delay;
 
 	/* factory config */
 	oplus,mdss-dsi-vendor-name = "AMB670YF07_CS";

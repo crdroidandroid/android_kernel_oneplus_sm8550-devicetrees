@@ -64,7 +64,7 @@
 
 	cam_csiphy1: qcom,csiphy1@ace6000 {
 		cell-index = <1>;
-		compatible = "qcom,csiphy-v2.1.2-crow-enhance", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.1.2-crow-jeep-main-enhance", "qcom,csiphy";
 		reg = <0xace6000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0xe6000>;

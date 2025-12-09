@@ -815,7 +815,6 @@
 		qcom,charging_switch1-gpio = <&pm8550b_gpios 8 0x00>;
 
 		qcom,external_gauge_support;
-		oplus,full_limit_curr_support;
 		qcom,voocphy_bidirect_cp_support;
 		qcom,voocphy_current_default = <91>;
 		qcom,copycat_vooc_support;

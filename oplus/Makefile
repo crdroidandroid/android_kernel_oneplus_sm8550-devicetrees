@@ -24,7 +24,9 @@ OPLUS_KALAMA_BOARDS += \
 else ifeq ($(CONFIG_BENZ_DTB),y)
 KALAMA_BASE_DTB += ../qcom/crow.dtb
 OPLUS_KALAMA_BOARDS += \
+		benz-23061-crow-overlay-DVT1.dtbo \
 		benz-23871-crow-overlay-DVT1.dtbo \
+		benz-23061-crow-overlay.dtbo \
 		benz-23871-crow-overlay.dtbo
 endif
 

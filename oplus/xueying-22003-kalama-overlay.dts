@@ -102,26 +102,6 @@
   };
   //#endif /* OPLUS_FEATRUE_ESIM */
 
-  preisp: zeku,explorer@0 {
-    compatible = "zeku,explorer";
-    interrupt-parent = <&tlmm>;
-    bsp_irq_gpio = <&tlmm 171 0>;
-    bsp_int1_gpio = <&tlmm 172 0>;
-    bsp_int2_gpio = <&tlmm 88 0>;
-    explorer_sleep_gpio = <&tlmm 144 0>;
-    pmic_pon_gpio = <&tlmm 116 0>;
-    pmic_reset_gpio = <&tlmm 125 0>;
-    pinctrl-names = "default";
-    pinctrl-0 = <&explorer_int0 &explorer_int1 &explorer_int2 &pmic_pon_1 &gpio_sleep &pmic_resin_n>;
-    clock-names = "clk_ref";
-    clocks = <&rpmhcc RPMH_LN_BB_CLK4>;
-    vcc_sdio-supply = <&L8B>;
-    explorer,clk-drive-strength = <4>;
-    explorer,cmd-drive-strength = <4>;
-    explorer,data-drive-strength = <4>;
-    explorer,spmi-drive-strength = <2>;
-  };
-
   oplus_kernel_state_monitor {
     compatible = "oplus,kernel_state_monitor";
   };

@@ -198,3 +198,12 @@
     };
 };
 
+&preisp {
+	explorer,spmi-drive-strength = <2>;
+};
+
+&sdhc_2 {
+	vdd-supply = <&L9B>;
+	qcom,vdd-voltage-level = <2950000 2960000>;
+	qcom,vdd-current-level = <0 800000>;
+};
